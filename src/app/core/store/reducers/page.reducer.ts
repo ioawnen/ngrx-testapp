@@ -1,10 +1,13 @@
 import { PageActionsUnion, PageActionTypes } from '../actions/page.actions';
 import * as fromElements from './elements.reducer';
+import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 
 export interface PageState {
     elements: fromElements.ElementsState;
 }
+
+export const pageAdapter: EntityAdapter<PageState> = createEntityAdapter<PageState>();
 
 export const initialState: PageState = {
     elements: fromElements.initialState
